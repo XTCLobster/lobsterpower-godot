@@ -1,12 +1,10 @@
 extends Area2D
 
-export var speed: float = 200
-var screen_size: Vector2
+export var base_speed: float = 200
+var speed: float = base_speed
+onready var screen_size: Vector2 = get_viewport_rect().size
 
 signal consume
-
-func _ready() -> void:
-    screen_size = get_viewport_rect().size
 
 func _process(delta: float) -> void:
     var velocity = velocity()
