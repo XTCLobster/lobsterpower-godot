@@ -19,6 +19,10 @@ config/name="XTCLobster"
 run/main_scene="res://Screen.tscn"
 config/icon="res://icon.png"
 
+[display]
+
+window/size/resizable=false
+
 [rendering]
 
 environment/default_environment="res://default_env.tres"
