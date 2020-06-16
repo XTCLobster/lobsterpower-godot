@@ -1,0 +1,27 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://spicyrice.tres" type="DynamicFont" id=1]
+
+[node name="Stats" type="Node2D"]
+
+[node name="ScoreLabel" type="Label" parent="."]
+margin_right = 40.0
+margin_bottom = 14.0
+rect_rotation = 0.0215478
+custom_fonts/font = ExtResource( 1 )
+text = "Score: "
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Score" type="Label" parent="ScoreLabel"]
+anchor_left = 1.0
+anchor_right = 1.0
+margin_right = 83.0
+margin_bottom = 50.0
+rect_rotation = 0.27311
+custom_fonts/font = ExtResource( 1 )
+text = "1234"
+__meta__ = {
+"_edit_use_anchors_": false
+}
