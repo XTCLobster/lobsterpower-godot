@@ -29,6 +29,9 @@ z_index = 999
 rotation = -0.000994363
 z_index = 100
 script = ExtResource( 5 )
+__meta__ = {
+"_edit_group_": true
+}
 
 [node name="Sprite" type="Sprite" parent="Lobster"]
 rotation = -0.0019707
@@ -36,7 +39,7 @@ scale = Vector2( 0.5, 0.5 )
 texture = ExtResource( 3 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Lobster"]
-position = Vector2( 0, 30 )
+position = Vector2( -3.72529e-09, 30 )
 scale = Vector2( 5, 10 )
 shape = SubResource( 1 )
 
@@ -46,3 +49,4 @@ autostart = true
 
 [node name="PillSpawnTimer" type="Timer" parent="."]
 autostart = true
+[connection signal="area_entered" from="Lobster" to="Lobster" method="_on_Lobster_area_entered"]

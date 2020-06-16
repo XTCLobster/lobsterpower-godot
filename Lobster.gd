@@ -3,6 +3,8 @@ extends Area2D
 export var speed: float = 200
 var screen_size: Vector2
 
+signal consume
+
 func _ready() -> void:
     screen_size = get_viewport_rect().size
 
@@ -29,3 +31,6 @@ func velocity() -> Vector2:
         velocity = velocity.normalized() * speed
 
     return velocity
+
+func _on_Lobster_area_entered(area: Area2D) -> void:
+    emit_signal("consume", area)
