@@ -1,10 +1,13 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://background.png" type="Texture" id=1]
 [ext_resource path="res://Stats.tscn" type="PackedScene" id=2]
+[ext_resource path="res://lobster.png" type="Texture" id=3]
+[ext_resource path="res://Screen.gd" type="Script" id=4]
 
 [node name="Screen" type="Node2D"]
 rotation = 0.00395018
+script = ExtResource( 4 )
 
 [node name="Background" type="TextureRect" parent="."]
 margin_right = 800.0
@@ -18,3 +21,8 @@ __meta__ = {
 }
 
 [node name="Stats" parent="." instance=ExtResource( 2 )]
+
+[node name="Lobster" type="Sprite" parent="."]
+rotation = -0.0019707
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 3 )
