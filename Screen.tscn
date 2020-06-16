@@ -24,6 +24,7 @@ __meta__ = {
 [node name="Stats" parent="." instance=ExtResource( 2 )]
 
 [node name="Lobster" type="Area2D" parent="."]
+rotation = -0.000994363
 script = ExtResource( 5 )
 
 [node name="Sprite" type="Sprite" parent="Lobster"]
@@ -35,3 +36,7 @@ texture = ExtResource( 3 )
 position = Vector2( 0, 30 )
 scale = Vector2( 5, 10 )
 shape = SubResource( 1 )
+
+[node name="StarvationTimer" type="Timer" parent="."]
+wait_time = 0.1
+autostart = true

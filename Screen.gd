@@ -11,3 +11,8 @@ func _ready() -> void:
 
     lobster.position.x = screen_size.x / 2
     lobster.position.y = screen_size.y / 2
+
+    $StarvationTimer.connect("timeout", self, "_on_StarvationTimer_timeout")
+
+func _on_StarvationTimer_timeout():
+    $Stats.increment_score(-1)
