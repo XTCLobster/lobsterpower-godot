@@ -9,6 +9,8 @@ margin_right = 40.0
 margin_bottom = 14.0
 rect_rotation = 0.0215478
 custom_fonts/font = ExtResource( 1 )
+custom_colors/font_color = Color( 0.831373, 0.27451, 0.27451, 1 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
 text = "Score: "
 __meta__ = {
 "_edit_use_anchors_": false
@@ -19,8 +21,10 @@ anchor_left = 1.0
 anchor_right = 1.0
 margin_right = 83.0
 margin_bottom = 50.0
-rect_rotation = 0.27311
+rect_rotation = 0.445314
 custom_fonts/font = ExtResource( 1 )
+custom_colors/font_color = Color( 0.219608, 0.219608, 1, 1 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
 text = "1234"
 __meta__ = {
 "_edit_use_anchors_": false
