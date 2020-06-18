@@ -1,9 +1,10 @@
 [gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://Pills/Pill.gd" type="Script" id=1]
-[ext_resource path="res://Pills/pill1.png" type="Texture" id=2]
+[ext_resource path="res://Pills/pill3.png" type="Texture" id=2]
 
 [sub_resource type="CircleShape2D" id=1]
+radius = 9.46218
 
 [sub_resource type="Animation" id=2]
 resource_name = "jiggle"
@@ -21,23 +22,25 @@ tracks/0/keys = {
 "values": [ -30.0, 30.0 ]
 }
 
-[node name="Pill" type="Area2D"]
+[node name="Pill3" type="Area2D"]
+position = Vector2( -1.11102, -0.940086 )
 z_index = 10
 collision_mask = 0
 script = ExtResource( 1 )
 __meta__ = {
 "_edit_group_": true
 }
+value = 333
 
 [node name="Sprite" type="Sprite" parent="."]
-rotation = 0.321704
+rotation = -0.523599
 texture = ExtResource( 2 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-scale = Vector2( 1.6, 1.4 )
+rotation = -0.174533
+scale = Vector2( 2, 1.4 )
 shape = SubResource( 1 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-playback_speed = 1.2
 anims/jiggle = SubResource( 2 )
 [connection signal="body_entered" from="." to="." method="_on_Pill_body_entered"]

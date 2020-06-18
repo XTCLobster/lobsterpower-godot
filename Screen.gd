@@ -1,6 +1,12 @@
 extends Node2D
 
-export(PackedScene) var Pill: PackedScene
+var Pill1: PackedScene = load("res://Pills/Pill1.tscn")
+var Pill2: PackedScene = load("res://Pills/Pill2.tscn")
+var Pill3: PackedScene = load("res://Pills/Pill3.tscn")
+var Pill4: PackedScene = load("res://Pills/Pill4.tscn")
+var Pill5: PackedScene = load("res://Pills/Pill5.tscn")
+var Pill6: PackedScene = load("res://Pills/Pill6.tscn")
+
 onready var screen_size: Vector2 = get_viewport_rect().size
 
 func _ready() -> void:
@@ -27,13 +33,24 @@ func _on_PillSpawnTimer_timeout() -> void:
         spawn_pill()
 
 func spawn_pill() -> void:
-    var pill: Node2D = Pill.instance()
+    var pill: Node = random_pill_node()
     pill.position = Vector2(
         rand_range(0, screen_size.x),
         rand_range(0, screen_size.y)
     )
     pill.visible = true
     add_child(pill)
+
+func random_pill_node() -> Node:
+    var pill_variant = randi() % 6
+    match pill_variant:
+        0: return Pill1.instance()
+        1: return Pill2.instance()
+        2: return Pill3.instance()
+        3: return Pill4.instance()
+        4: return Pill5.instance()
+        5: return Pill6.instance()
+        _: return Pill1.instance()
 
 func _on_StarvationTimer_timeout() -> void:
     # Decrease by (0.1% ... 2%)

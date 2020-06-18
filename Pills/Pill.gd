@@ -1,3 +1,4 @@
+class_name BasePill
 extends Area2D
 
 # How much it's worth; customizable
