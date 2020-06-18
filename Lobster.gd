@@ -4,8 +4,6 @@ export var base_speed: float = 200
 var speed: float = base_speed
 onready var screen_size: Vector2 = get_viewport_rect().size
 
-signal consume
-
 func _process(delta: float) -> void:
     var velocity = velocity()
     position += velocity * delta
@@ -29,6 +27,3 @@ func velocity() -> Vector2:
         velocity = velocity.normalized() * speed
 
     return velocity
-
-func _on_Lobster_area_entered(area: Area2D) -> void:
-    emit_signal("consume", area)

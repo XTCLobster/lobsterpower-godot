@@ -71,4 +71,3 @@ autostart = true
 
 [node name="PillSpawnTimer" type="Timer" parent="."]
 autostart = true
-[connection signal="area_entered" from="Lobster" to="Lobster" method="_on_Lobster_area_entered"]
