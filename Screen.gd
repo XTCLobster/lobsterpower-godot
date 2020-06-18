@@ -23,6 +23,11 @@ func _on_pill_consumed(value: int) -> void:
     $Lobster/CollectAudioStreamPlayer.play()
 
 func _on_PillSpawnTimer_timeout() -> void:
+    var num_pills: int = randi() % 3 + 1 # 1...3
+    for i in num_pills:
+        spawn_pill()
+
+func spawn_pill() -> void:
     var pill: Node2D = Pill.instance()
     pill.position = Vector2(
         rand_range(0, screen_size.x),
