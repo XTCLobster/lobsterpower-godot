@@ -1,9 +1,25 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://pill1.png" type="Texture" id=1]
 [ext_resource path="res://Pill.gd" type="Script" id=2]
 
 [sub_resource type="CircleShape2D" id=1]
+
+[sub_resource type="Animation" id=2]
+resource_name = "jiggle"
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:rotation_degrees")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 2, 2 ),
+"update": 0,
+"values": [ -30.0, 30.0 ]
+}
 
 [node name="Pill" type="Area2D"]
 z_index = 10
@@ -14,8 +30,13 @@ __meta__ = {
 }
 
 [node name="Sprite" type="Sprite" parent="."]
+rotation = 0.321704
 texture = ExtResource( 1 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 scale = Vector2( 1.6, 1.4 )
 shape = SubResource( 1 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+playback_speed = 1.2
+anims/jiggle = SubResource( 2 )
