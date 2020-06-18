@@ -31,6 +31,7 @@ tracks/1/keys = {
 }
 
 [node name="ValueIndicator" type="Node2D"]
+z_index = 999
 script = ExtResource( 2 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]

@@ -32,10 +32,7 @@ func _on_pill_consumed(pill: BasePill) -> void:
 func show_value_for_pill(pill: BasePill) -> void:
     var value_indicator: Node2D = ValueIndicator.instance()
     value_indicator.value = pill.value
-    value_indicator.position = Vector2(
-        max(0, $Lobster.position.x),
-        max(0, $Lobster.position.y - 50)
-    )
+    value_indicator.position = pill.position
     add_child(value_indicator)
 
 func _on_PillSpawnTimer_timeout() -> void:

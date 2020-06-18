@@ -37,7 +37,7 @@ __meta__ = {
 }
 
 [node name="Stats" parent="." instance=ExtResource( 2 )]
-z_index = 999
+z_index = 888
 
 [node name="Lobster" type="KinematicBody2D" parent="."]
 rotation = -0.000994363
