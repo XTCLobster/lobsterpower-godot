@@ -53,8 +53,8 @@ func random_pill_node() -> Node:
         _: return Pill1.instance()
 
 func _on_StarvationTimer_timeout() -> void:
-    # Decrease by (0.1% ... 2%)
-    increment_score(-$Stats.get_score() * rand_range(0.001, 0.02))
+    # Decrease by (0.01% ... 1%)
+    increment_score(-$Stats.get_score() * rand_range(0.0001, 0.01))
 
 func increment_score(value: int) -> void:
     $Stats.increment_score(value)
