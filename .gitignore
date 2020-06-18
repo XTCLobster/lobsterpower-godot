@@ -2,3 +2,4 @@
 logs/
 export_presets.cfg
 .mono/
+build/
