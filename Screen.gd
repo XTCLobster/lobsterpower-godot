@@ -17,8 +17,7 @@ func _ready() -> void:
     $StarvationTimer.connect("timeout", self, "_on_StarvationTimer_timeout")
 
 func _on_pill_consumed(value: int) -> void:
-    $Stats.increment_score(value)
-    $Lobster.speed = $Lobster.base_speed * ($Stats.get_score() / 1000 + 1)
+    increment_score(value)
     $Lobster/AnimationPlayer.play("eat")
     $Lobster/CollectAudioStreamPlayer.play()
 
@@ -37,4 +36,14 @@ func spawn_pill() -> void:
     add_child(pill)
 
 func _on_StarvationTimer_timeout() -> void:
-    $Stats.increment_score(-1)
+    # Decrease by (0.1% ... 2%)
+    increment_score(-$Stats.get_score() * rand_range(0.001, 0.02))
+
+func increment_score(value: int) -> void:
+    $Stats.increment_score(value)
+    adjust_lobster_speed()
+
+func adjust_lobster_speed() -> void:
+    # Move at the speed of a 1/1000th of the score, but at 1.0x at least
+    var speed_factor: float = max(1.0, float($Stats.get_score()) / 1000)
+    $Lobster.speed = $Lobster.base_speed * speed_factor
