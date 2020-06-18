@@ -40,5 +40,4 @@ shape = SubResource( 1 )
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 playback_speed = 1.2
 anims/jiggle = SubResource( 2 )
-[connection signal="area_entered" from="." to="." method="_on_Pill_body_entered"]
 [connection signal="body_entered" from="." to="." method="_on_Pill_body_entered"]
