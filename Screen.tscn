@@ -41,13 +41,10 @@ __meta__ = {
 [node name="Stats" parent="." instance=ExtResource( 2 )]
 z_index = 999
 
-[node name="Lobster" type="Area2D" parent="."]
+[node name="Lobster" type="KinematicBody2D" parent="."]
 rotation = -0.000994363
 z_index = 100
 script = ExtResource( 5 )
-__meta__ = {
-"_edit_group_": true
-}
 
 [node name="Sprite" type="Sprite" parent="Lobster"]
 rotation = -0.0019707
