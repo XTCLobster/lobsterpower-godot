@@ -1,3 +1,3 @@
 extends Node
 
-signal pill_consumed(value)
+signal pill_consumed(pill)

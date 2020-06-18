@@ -6,6 +6,7 @@ var Pill3: PackedScene = load("res://Pills/Pill3.tscn")
 var Pill4: PackedScene = load("res://Pills/Pill4.tscn")
 var Pill5: PackedScene = load("res://Pills/Pill5.tscn")
 var Pill6: PackedScene = load("res://Pills/Pill6.tscn")
+var ValueIndicator: PackedScene = load("res://Pills/ValueIndicator.tscn")
 
 onready var screen_size: Vector2 = get_viewport_rect().size
 
@@ -22,10 +23,20 @@ func _ready() -> void:
     $PillSpawnTimer.connect("timeout", self, "_on_PillSpawnTimer_timeout")
     $StarvationTimer.connect("timeout", self, "_on_StarvationTimer_timeout")
 
-func _on_pill_consumed(value: int) -> void:
-    increment_score(value)
+func _on_pill_consumed(pill: BasePill) -> void:
+    increment_score(pill.value)
+    show_value_for_pill(pill)
     $Lobster/AnimationPlayer.play("eat")
     $Lobster/CollectAudioStreamPlayer.play()
+
+func show_value_for_pill(pill: BasePill) -> void:
+    var value_indicator: Node2D = ValueIndicator.instance()
+    value_indicator.value = pill.value
+    value_indicator.position = Vector2(
+        max(0, $Lobster.position.x),
+        max(0, $Lobster.position.y - 50)
+    )
+    add_child(value_indicator)
 
 func _on_PillSpawnTimer_timeout() -> void:
     var num_pills: int = randi() % 3 + 1 # 1...3

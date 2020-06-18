@@ -1,0 +1,56 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Stats/spicyrice.tres" type="DynamicFont" id=1]
+[ext_resource path="res://Pills/ValueIndicator.gd" type="Script" id=2]
+
+[sub_resource type="Animation" id=1]
+resource_name = "decay"
+tracks/0/type = "value"
+tracks/0/path = NodePath("Label:rect_position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( -50, 0 ), Vector2( -50, -20 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Label:modulate")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+}
+
+[node name="ValueIndicator" type="Node2D"]
+script = ExtResource( 2 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/decay = SubResource( 1 )
+
+[node name="Label" type="Label" parent="."]
+anchor_top = 0.000223656
+anchor_bottom = 0.000223656
+margin_left = -50.0
+margin_right = 50.0
+margin_bottom = 50.0
+grow_horizontal = 2
+grow_vertical = 0
+rect_pivot_offset = Vector2( 50, 0 )
+custom_fonts/font = ExtResource( 1 )
+custom_colors/font_color = Color( 0.992157, 1, 0, 1 )
+custom_colors/font_color_shadow = Color( 0.0941176, 0.0431373, 1, 1 )
+text = "123"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false,
+"_editor_description_": ""
+}
