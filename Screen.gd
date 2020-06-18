@@ -21,6 +21,7 @@ func _on_Lobster_consume(area: Area2D) -> void:
     remove_child(area)
     $Stats.increment_score(value)
     $Lobster.speed = $Lobster.base_speed * ($Stats.get_score() / 1000 + 1)
+    $Lobster/AnimationPlayer.play("eat")
 
 func _on_PillSpawnTimer_timeout() -> void:
     var pill = Pill.instance()
